@@ -596,13 +596,3 @@ jobs:
         emcc -v
         emcmake cmake -B build -DCMAKE_BUILD_TYPE=Release examples/example_glfw_wgpu
         cmake --build build
-
-  Android:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Build example_android_opengl3
-      run: |
-        cd examples/example_android_opengl3/android
-        gradle assembleDebug --stacktrace
